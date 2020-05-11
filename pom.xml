@@ -9,4 +9,7 @@
 
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>dataway-springboot</module>
+	</modules>
 </project>
