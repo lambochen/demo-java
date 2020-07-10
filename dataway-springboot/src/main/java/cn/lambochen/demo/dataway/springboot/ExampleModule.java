@@ -1,4 +1,4 @@
-package com.lambochen.demo.dataway.springboot;
+package cn.lambochen.demo.dataway.springboot;
 
 import net.hasor.core.ApiBinder;
 import net.hasor.core.DimModule;

@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.lambochen.demo</groupId>
+	<groupId>cn.lambochen.demo</groupId>
 	<artifactId>demo-build</artifactId>
 	<version>0.0.1</version>
 
@@ -11,5 +11,6 @@
 
 	<modules>
 		<module>dataway-springboot</module>
+		<module>spock</module>
 	</modules>
 </project>

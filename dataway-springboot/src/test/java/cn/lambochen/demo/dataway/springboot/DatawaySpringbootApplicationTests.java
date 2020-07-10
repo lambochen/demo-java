@@ -1,4 +1,4 @@
-package com.lambochen.demo.dataway.springboot;
+package cn.lambochen.demo.dataway.springboot;
 
 
 class DatawaySpringbootApplicationTests {
