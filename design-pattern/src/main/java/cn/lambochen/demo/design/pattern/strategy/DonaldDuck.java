@@ -8,11 +8,6 @@ package cn.lambochen.demo.design.pattern.strategy;
 public class DonaldDuck extends Duck {
     public DonaldDuck() {
         super();
-        super.setFlyStrategy(new FlyStrategy() {
-            @Override
-            public void fly() {
-                System.out.println("意念飞行，哈哈哈哈。。。");
-            }
-        });
+        super.setFlyStrategy(() -> System.out.println("意念飞行，哈哈哈哈。。。"));
     }
 }
