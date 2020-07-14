@@ -13,7 +13,12 @@ public class AdapterMain {
         TwoPhaseInterfaceAdapter adapter = new TwoPhaseInterfaceAdapter();
         adapter.setThree(new ThreePhaseInterfaceImpl());
         noteBook.setTwo(adapter);
+        noteBook.power();
 
+        System.out.println("******************");
+
+        TwoPhaseInterfaceExtendsAdapter extendsAdapter = new TwoPhaseInterfaceExtendsAdapter();
+        noteBook.setTwo(extendsAdapter);
         noteBook.power();
     }
 }
