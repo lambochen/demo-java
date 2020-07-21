@@ -7,8 +7,7 @@
     <artifactId>rpc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>rpc</name>
-    <description>RPC Demo</description>
+    <packaging>pom</packaging>
 
     <modules>
         <module>rpc-common</module>

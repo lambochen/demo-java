@@ -10,28 +10,19 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>rpc-server</artifactId>
+    <artifactId>rpc-example</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>cn.lambochen.demo</groupId>
-            <artifactId>rpc-proto</artifactId>
+            <artifactId>rpc-server</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.lambochen.demo</groupId>
-            <artifactId>rpc-transport</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.lambochen.demo</groupId>
-            <artifactId>rpc-common</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.lambochen.demo</groupId>
-            <artifactId>rpc-codec</artifactId>
+            <artifactId>rpc-client</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
+
 </project>

@@ -7,8 +7,24 @@
         <groupId>cn.lambochen.demo</groupId>
         <artifactId>rpc</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>rpc-transport</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.lambochen.demo</groupId>
+            <artifactId>rpc-proto</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+        </dependency>
+    </dependencies>
 </project>
