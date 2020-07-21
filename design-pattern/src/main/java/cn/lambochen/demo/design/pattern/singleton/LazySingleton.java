@@ -12,6 +12,7 @@ public class LazySingleton {
     private LazySingleton() {
     }
 
+    // volatile 禁止指令重排 https://www.zhihu.com/question/56606703
     private volatile static LazySingleton instance;
 
     public static LazySingleton getInstance() {
