@@ -13,5 +13,6 @@
 		<module>dataway-springboot</module>
 		<module>spock</module>
 		<module>design-pattern</module>
+		<module>rpc</module>
 	</modules>
 </project>
