@@ -16,6 +16,7 @@
         <module>rpc-server</module>
         <module>rpc-proto</module>
         <module>rpc-transport</module>
+        <module>rpc-example</module>
     </modules>
 
     <properties>

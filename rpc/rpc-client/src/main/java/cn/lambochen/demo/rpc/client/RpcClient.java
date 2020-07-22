@@ -2,8 +2,7 @@ package cn.lambochen.demo.rpc.client;
 
 import cn.lambochen.demo.rpc.codec.Decoder;
 import cn.lambochen.demo.rpc.codec.Encoder;
-import cn.lambochen.demo.rpc.codec.json.JsonDecoder;
-import cn.lambochen.demo.rpc.codec.json.JsonEncoder;
+import cn.lambochen.demo.rpc.common.utils.ReflectionUtils;
 
 import java.lang.reflect.Proxy;
 
@@ -20,6 +19,7 @@ public class RpcClient {
     private TransportSelector selector;
 
     public RpcClient() {
+        this(new RpcClientConfig());
     }
 
     public RpcClient(RpcClientConfig config) {
