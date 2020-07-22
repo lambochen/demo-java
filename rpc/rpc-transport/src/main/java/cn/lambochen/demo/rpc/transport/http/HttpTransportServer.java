@@ -2,10 +2,11 @@ package cn.lambochen.demo.rpc.transport.http;
 
 import cn.lambochen.demo.rpc.transport.RequestHandler;
 import cn.lambochen.demo.rpc.transport.TransportServer;
-import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,8 +21,9 @@ import java.io.OutputStream;
  * @Date 2020/7/21 23:48
  * @Description 基于 HTTP 实现服务端
  **/
-@Slf4j
 public class HttpTransportServer implements TransportServer {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(HttpTransportServer.class);
 
     private RequestHandler handler;
 
@@ -46,7 +48,7 @@ public class HttpTransportServer implements TransportServer {
             server.start();
             server.join();
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+            LOGGER.error(e.getMessage(), e);
         }
     }
 
@@ -55,14 +57,14 @@ public class HttpTransportServer implements TransportServer {
         try {
             server.stop();
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+            LOGGER.error(e.getMessage(), e);
         }
     }
 
     class RequestServlet extends HttpServlet {
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            log.info("client connect...");
+            LOGGER.info("client connect...");
             InputStream inputStream = req.getInputStream();
             OutputStream outputStream = resp.getOutputStream();
 

@@ -3,7 +3,8 @@ package cn.lambochen.demo.rpc.server;
 import cn.lambochen.demo.rpc.common.utils.ReflectionUtils;
 import cn.lambochen.demo.rpc.proto.Request;
 import cn.lambochen.demo.rpc.proto.ServiceDescriptor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -14,8 +15,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * @Date 2020/7/22 0:07
  * @Description 管理 RPC 暴露的服务
  **/
-@Slf4j
 public class ServiceManager {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ServiceManager.class);
 
     /**
      * 服务实例
@@ -40,7 +42,7 @@ public class ServiceManager {
             ServiceDescriptor descriptor = ServiceDescriptor.from(interfaceClass, method);
 
             services.put(descriptor, instance);
-            log.info("register service: {} {}", descriptor.getClazz(), instance.getMethod());
+            LOGGER.info("register service: {} {}", descriptor.getClazz(), instance.getMethod());
         }
     }
 

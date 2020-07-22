@@ -3,7 +3,8 @@ package cn.lambochen.demo.rpc.client;
 import cn.lambochen.demo.rpc.common.utils.ReflectionUtils;
 import cn.lambochen.demo.rpc.proto.Peer;
 import cn.lambochen.demo.rpc.transport.TransportClient;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +15,9 @@ import java.util.Random;
  * @Date 2020/7/22 0:59
  * @Description 随机选择
  **/
-@Slf4j
 public class RandomTransportSelector implements TransportSelector {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(RandomTransportSelector.class);
 
     /**
      * 已经连接好的 client
@@ -36,7 +38,7 @@ public class RandomTransportSelector implements TransportSelector {
                 client.connect(peer);
                 clients.add(client);
             }
-            log.info("connect server: {}", peer);
+            LOGGER.info("connect server: {}", peer);
         }
     }
 

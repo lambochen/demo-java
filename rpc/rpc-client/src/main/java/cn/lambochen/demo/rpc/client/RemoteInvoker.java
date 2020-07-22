@@ -6,8 +6,9 @@ import cn.lambochen.demo.rpc.proto.Request;
 import cn.lambochen.demo.rpc.proto.Response;
 import cn.lambochen.demo.rpc.proto.ServiceDescriptor;
 import cn.lambochen.demo.rpc.transport.TransportClient;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -20,8 +21,9 @@ import java.lang.reflect.Method;
  * @Date 2020/7/22 1:12
  * @Description 调用远程服务的代理类
  **/
-@Slf4j
 public class RemoteInvoker implements InvocationHandler {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(RemoteInvoker.class);
 
     private Class clazz;
     private RpcClientConfig config;
@@ -62,7 +64,7 @@ public class RemoteInvoker implements InvocationHandler {
                 byte[] inBytes = IOUtils.readFully(receive, receive.available());
                 response = decoder.decoder(inBytes, Response.class);
             } catch (IOException e) {
-                log.warn(e.getMessage(), e);
+                LOGGER.warn(e.getMessage(), e);
 
                 response = new Response();
                 response.setCode(1);

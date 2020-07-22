@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @Author lambo.chen.2306@gmail.com
  * @Date 2020/7/22 1:05
- * @Description TODO
+ * @Description RPC client 配置
  **/
 public class RpcClientConfig {
 

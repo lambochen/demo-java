@@ -7,8 +7,9 @@ import cn.lambochen.demo.rpc.proto.Request;
 import cn.lambochen.demo.rpc.proto.Response;
 import cn.lambochen.demo.rpc.transport.RequestHandler;
 import cn.lambochen.demo.rpc.transport.TransportServer;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,8 +20,10 @@ import java.io.OutputStream;
  * @Date 2020/7/22 0:44
  * @Description RPC Server
  **/
-@Slf4j
 public class RpcServer {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(RpcServer.class);
+
     private RpcServerConfig config;
 
     private TransportServer net;
@@ -36,14 +39,14 @@ public class RpcServer {
             try {
                 byte[] inBytes = IOUtils.readFully(receive, receive.available());
                 Request request = decoder.decoder(inBytes, Request.class);
-                log.info("get request: {}", request);
+                LOGGER.info("get request: {}", request);
 
                 ServiceInstance service = serviceManager.lookup(request);
                 Object ret = serviceInvoker.invoke(service, request);
 
                 response.setData(ret);
             } catch (IOException e) {
-                log.warn(e.getMessage(), e);
+                LOGGER.warn(e.getMessage(), e);
 
                 response.setCode(1);
                 response.setMessage(e.getMessage());
@@ -52,7 +55,7 @@ public class RpcServer {
                 try {
                     toResponse.write(outBytes);
                 } catch (IOException e) {
-                    log.warn(e.getMessage(), e);
+                    LOGGER.warn(e.getMessage(), e);
                 }
             }
         }
@@ -66,12 +69,12 @@ public class RpcServer {
         this.config = config;
 
         // net
-        this.net = ReflectionUtils.newInstance(config.getTransportClass());
+        this.net = ReflectionUtils.newInstance(this.config.getTransportClass());
         this.net.init(config.getPort(), handler);
 
         // codec
-        this.encoder = ReflectionUtils.newInstance(config.getEncoderClass());
-        this.decoder = ReflectionUtils.newInstance(config.getDecoderClass());
+        this.encoder = ReflectionUtils.newInstance(this.config.getEncoderClass());
+        this.decoder = ReflectionUtils.newInstance(this.config.getDecoderClass());
 
         // service
         this.serviceManager = new ServiceManager();
