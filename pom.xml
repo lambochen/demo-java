@@ -15,5 +15,6 @@
 		<module>design-pattern</module>
 		<module>rpc</module>
 		<module>java-agent</module>
+		<module>zookeeper</module>
 	</modules>
 </project>

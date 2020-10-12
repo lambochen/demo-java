@@ -7,4 +7,5 @@
 - design-pattern: 设计模式学习
 - rpc: RPC demo
 - java-agent: Java Agent Demo
+- zookeeper: ZooKeeper Demo
 
