@@ -21,9 +21,13 @@ public class CuratorDemo {
          * 1. 创建 Curator 客户端
          */
         CuratorFramework client = CuratorFrameworkFactory.builder()
+                // zk 服务器，集群示例："127.0.0.1:2181,127.0.0.2:2181"
                 .connectString("127.0.0.1:2181")
+                // 会话超时时间
                 .sessionTimeoutMs(5000)
+                // 链接超时时间
                 .connectionTimeoutMs(3000)
+                // 重试策略
                 .retryPolicy(new ExponentialBackoffRetry(1000, 3))
                 .build();
 
@@ -40,7 +44,9 @@ public class CuratorDemo {
          */
         try {
             client.create()
+                    // 如果父节点不存在则创建
                     .creatingParentsIfNeeded()
+                    // znode 节点类型
                     .withMode(CreateMode.PERSISTENT)
                     .forPath(path, data.getBytes());
         } catch (Exception e) {
@@ -73,7 +79,9 @@ public class CuratorDemo {
             // 读取数据
             Stat stat = new Stat();
             byte[] nodeData = client.getData()
+                    // 获取 Stat 数据
                     .storingStatIn(stat)
+                    // 获取 data
                     .forPath(path);
 
             System.out.println("[update] Node Data:" + new String(nodeData));
