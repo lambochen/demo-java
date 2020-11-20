@@ -8,4 +8,5 @@
 - rpc: RPC demo
 - java-agent: Java Agent Demo
 - zookeeper: ZooKeeper Demo
+- simple: some simple demo
 
