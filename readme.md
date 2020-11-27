@@ -9,4 +9,6 @@
 - java-agent: Java Agent Demo
 - zookeeper: ZooKeeper Demo
 - simple: some simple demo
+  - 动态代理使用示例
+  - 手写 Mockito 简易版 
 
