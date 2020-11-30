@@ -1,9 +1,6 @@
 package cn.lambochen.demo.rpc.common.utils;
 
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @Author lambo.chen.2306@gmail.com
@@ -34,15 +31,7 @@ public abstract class ReflectionUtils {
      * @return
      */
     public static Method[] getPublicMethods(Class clazz) {
-        // 获取当前类所有的方法，包含 private，public, protected, default. 不包含父类方法
-        Method[] methods = clazz.getDeclaredMethods();
-        List<Method> pMethods = new ArrayList<>();
-        for (Method method : methods) {
-            if (Modifier.isPublic(method.getModifiers())) {
-                pMethods.add(method);
-            }
-        }
-        return pMethods.toArray(new Method[0]);
+        return clazz.getMethods();
     }
 
     /**

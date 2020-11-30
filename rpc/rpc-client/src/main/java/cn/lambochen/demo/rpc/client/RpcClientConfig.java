@@ -8,7 +8,7 @@ import cn.lambochen.demo.rpc.proto.Peer;
 import cn.lambochen.demo.rpc.transport.TransportClient;
 import cn.lambochen.demo.rpc.transport.http.HttpTransportClient;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -23,7 +23,7 @@ public class RpcClientConfig {
     private Class<? extends Decoder> decoderClass = JsonDecoder.class;
     private Class<? extends TransportSelector> selectorClass = RandomTransportSelector.class;
     private int connectCount = 1;
-    private List<Peer> servers = Arrays.asList(new Peer("127.0.0.1", 8888));
+    private List<Peer> servers = Collections.singletonList(new Peer("127.0.0.1", 8888));
 
     public RpcClientConfig() {
     }

@@ -53,7 +53,7 @@ public class RemoteInvoker implements InvocationHandler {
 
     private Response invokeRemote(Request request) {
         TransportClient client = null;
-        Response response = null;
+        Response response;
         try {
             try {
                 client = selector.select();
