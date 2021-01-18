@@ -41,6 +41,7 @@ public class CglibProxyFactory implements MethodInterceptor {
         return enhancer.create();
     }
 
+    @Override
     public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
         System.out.println("cglid proxy: pre");
 
