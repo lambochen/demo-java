@@ -17,5 +17,6 @@
 		<module>java-agent</module>
 		<module>zookeeper</module>
 		<module>simple</module>
+		<module>spring-mvc-async</module>
 	</modules>
 </project>
