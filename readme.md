@@ -13,3 +13,4 @@
   - 手写 Mockito 简易版 
 - spring-mvn-async: SpringMVC 异步编程
 - dubbo: Apache Dubbo Demo
+- mapstruct: model mapper

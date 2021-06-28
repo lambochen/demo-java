@@ -19,5 +19,6 @@
 		<module>simple</module>
 		<module>spring-mvc-async</module>
 		<module>dubbo</module>
+		<module>mapstruct</module>
 	</modules>
 </project>
