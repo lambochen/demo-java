@@ -20,5 +20,6 @@
 		<module>spring-mvc-async</module>
 		<module>dubbo</module>
 		<module>mapstruct</module>
+		<module>xml-parse</module>
 	</modules>
 </project>
