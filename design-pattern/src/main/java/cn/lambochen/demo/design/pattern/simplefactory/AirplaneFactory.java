@@ -1,7 +1,7 @@
-package cn.lambochen.demo.design.pattern.factorymethod.factory;
+package cn.lambochen.demo.design.pattern.simplefactory;
 
-import cn.lambochen.demo.design.pattern.factorymethod.Airplane;
-import cn.lambochen.demo.design.pattern.factorymethod.Enemy;
+import cn.lambochen.demo.design.pattern.simplefactory.product.Airplane;
+import cn.lambochen.demo.design.pattern.simplefactory.product.Enemy;
 
 import java.util.Random;
 

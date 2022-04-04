@@ -1,4 +1,4 @@
-package cn.lambochen.demo.design.pattern.factorymethod;
+package cn.lambochen.demo.design.pattern.simplefactory.product;
 
 /**
  * @author lambochen
