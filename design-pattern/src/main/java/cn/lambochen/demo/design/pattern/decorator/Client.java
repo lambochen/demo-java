@@ -1,7 +1,5 @@
 package cn.lambochen.demo.design.pattern.decorator;
 
-import sun.security.provider.MD2;
-
 /**
  * @author lambochen
  * @date 2022-04-05 13:52
