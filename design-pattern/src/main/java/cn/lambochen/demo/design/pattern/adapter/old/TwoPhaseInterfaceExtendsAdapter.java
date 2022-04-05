@@ -1,4 +1,4 @@
-package cn.lambochen.demo.design.pattern.adapter;
+package cn.lambochen.demo.design.pattern.adapter.old;
 
 /**
  * @author lambo.chen.2306@gmail.com
