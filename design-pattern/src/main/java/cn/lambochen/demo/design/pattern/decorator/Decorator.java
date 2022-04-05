@@ -1,28 +1,23 @@
 package cn.lambochen.demo.design.pattern.decorator;
 
 /**
- * @Author lambo.chen.2306@gmail.com
- * @Date 2020/7/16 21:31
- * @Description 装饰器抽象类
- **/
-public abstract class Decorator implements Drink {
+ * @author lambochen
+ * @date 2022-04-05 13:51
+ *
+ * 化妆品装饰器
+ */
+public abstract class Decorator implements Showable {
 
-    /**
-     * 需要持有被装饰着的引用
-     */
-    protected Drink drink;
+    // 被装饰的展示者
+    private Showable showable;
 
-    public Decorator(Drink drink) {
-        this.drink = drink;
+    // 构造时注入被装饰者
+    public Decorator(Showable showable) {
+        this.showable = showable;
     }
 
     @Override
-    public float price() {
-        return drink.price();
-    }
-
-    @Override
-    public String desc() {
-        return drink.desc();
+    public void show() {
+        showable.show();
     }
 }
