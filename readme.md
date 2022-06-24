@@ -15,3 +15,4 @@
 - dubbo: Apache Dubbo Demo
 - mapstruct: model mapper
 - xml-parse: XML Parser
+- springbootcli-demo: SpringBoot CLI Groovy application demo
