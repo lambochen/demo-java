@@ -6,6 +6,12 @@
 spring run ./
 ```
 
+如需打 fatjar ，请运行（根目录下的 ReadingList.jar 即为产物）：
+
+```shell
+spring jar ReadingList.jar ./
+```
+
 运行前置依赖：
 
 - 本地已安装 Spring Boot CLI
