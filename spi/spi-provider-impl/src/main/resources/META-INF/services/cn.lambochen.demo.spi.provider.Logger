@@ -1,0 +1,2 @@
+cn.lambochen.demo.spi.provider.impl.SystemOutLogger
+cn.lambochen.demo.spi.provider.impl.SystemErrLogger

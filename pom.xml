@@ -21,5 +21,6 @@
 		<module>dubbo</module>
 		<module>mapstruct</module>
 		<module>xml-parse</module>
+		<module>spi</module>
 	</modules>
 </project>
