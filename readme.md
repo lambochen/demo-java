@@ -16,4 +16,4 @@
 - mapstruct: model mapper
 - xml-parse: XML Parser
 - springbootcli-demo: SpringBoot CLI Groovy application demo
-- api: Java API demo
+- spi: Java SPI demo
