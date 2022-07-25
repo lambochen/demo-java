@@ -9,6 +9,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DubboConsumerApplication {
 
+    /**
+     * 启动应用需先启动 zk，
+     *      启动zk：zkServer start
+     *      连接zk：zkCli
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         SpringApplication.run(DubboConsumerApplication.class, args);
     }
