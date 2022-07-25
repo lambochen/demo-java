@@ -12,7 +12,7 @@
   - 动态代理使用示例
   - 手写 Mockito 简易版 
 - [spring-mvn-async: SpringMVC 异步编程](./spring-mvn-async)
-- [dubbo: Apache Dubbo Demo](./dubbo)
+- [dubbo: Alibaba Dubbo Demo](./dubbo)
 - [mapstruct: model mapper](./mapstruct)
 - [xml-parse: XML Parser](./xml-parse)
 - [springbootcli-demo: SpringBoot CLI Groovy application demo](./springbootcli-demo)
