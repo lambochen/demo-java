@@ -22,5 +22,6 @@
 		<module>mapstruct</module>
 		<module>xml-parse</module>
 		<module>spi</module>
+		<module>bytebuddy</module>
 	</modules>
 </project>
