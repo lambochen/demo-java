@@ -1,6 +1,5 @@
 package cn.lambochen.demo.bytebuddy;
 
-import com.sun.tools.javah.Gen;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.dynamic.DynamicType;
 import net.bytebuddy.implementation.MethodDelegation;
@@ -10,7 +9,7 @@ import net.bytebuddy.matcher.ElementMatchers;
  * @author lambochen
  * @date 2022-07-28 00:12
  */
-public class ObjectGenerator_SubclassWithSameMethodFingerprint {
+public class ObjectGenerator_WithSameMethodFingerprint {
 
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
         Class<? extends People> clazz = generateSubclassWithSameMethodFingerprint();
@@ -22,7 +21,7 @@ public class ObjectGenerator_SubclassWithSameMethodFingerprint {
         /**
          * 输出：
          *
-         * cn.lambochen.demo.bytebuddy.SubclassWithSameMethodFingerprint
+         * cn.lambochen.demo.bytebuddy.WithSameMethodFingerprint
          * 你好，ByteBuddy
          */
     }
@@ -41,14 +40,14 @@ public class ObjectGenerator_SubclassWithSameMethodFingerprint {
     static Class<? extends People> generateSubclassWithSameMethodFingerprint() {
         DynamicType.Unloaded<People> unloaded = new ByteBuddy()
                 .subclass(People.class)
-                .name("cn.lambochen.demo.bytebuddy.SubclassWithSameMethodFingerprint")
+                .name("cn.lambochen.demo.bytebuddy.WithSameMethodFingerprint")
                 // 此处指明了需要拦截的方法
                 .method(ElementMatchers.named("say"))
                 // 委派到其它类实现
                 .intercept(MethodDelegation.to(new Chinese()))
                 .make();
 
-        return unloaded.load(ObjectGenerator_SubclassWithSameMethodFingerprint.class.getClassLoader()).getLoaded();
+        return unloaded.load(ObjectGenerator_WithSameMethodFingerprint.class.getClassLoader()).getLoaded();
     }
 
     public interface People {
