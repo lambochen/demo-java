@@ -8,6 +8,8 @@ import net.bytebuddy.matcher.ElementMatchers;
 /**
  * @author lambochen
  * @date 2022-07-27 23:57
+ *
+ * 创建对象 - 生成Object的子类，并重写toString
  */
 public class ObjectGenerator_SubclassForObjectAndOverrideToString {
 

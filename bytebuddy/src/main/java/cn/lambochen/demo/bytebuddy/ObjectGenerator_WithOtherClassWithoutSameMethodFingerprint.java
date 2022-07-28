@@ -1,7 +1,6 @@
 package cn.lambochen.demo.bytebuddy;
 
 import net.bytebuddy.ByteBuddy;
-import net.bytebuddy.dynamic.DynamicType;
 import net.bytebuddy.implementation.MethodDelegation;
 import net.bytebuddy.matcher.ElementMatchers;
 
