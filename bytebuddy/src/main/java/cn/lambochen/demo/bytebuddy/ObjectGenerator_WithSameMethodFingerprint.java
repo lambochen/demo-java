@@ -45,6 +45,7 @@ public class ObjectGenerator_WithSameMethodFingerprint {
                 .method(ElementMatchers.named("say"))
                 // 委派到其它类实现
                 .intercept(MethodDelegation.to(new Chinese()))
+                // make 创建一个 unloaded 尚未加载的类，即生成了类的字节码
                 .make()
                 .load(ObjectGenerator_WithSameMethodFingerprint.class.getClassLoader())
                 .getLoaded();
