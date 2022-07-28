@@ -38,16 +38,16 @@ public class ObjectGenerator_WithSameMethodFingerprint {
      * @return
      */
     static Class<? extends People> generateSubclassWithSameMethodFingerprint() {
-        DynamicType.Unloaded<People> unloaded = new ByteBuddy()
+        return new ByteBuddy()
                 .subclass(People.class)
                 .name("cn.lambochen.demo.bytebuddy.WithSameMethodFingerprint")
                 // 此处指明了需要拦截的方法
                 .method(ElementMatchers.named("say"))
                 // 委派到其它类实现
                 .intercept(MethodDelegation.to(new Chinese()))
-                .make();
-
-        return unloaded.load(ObjectGenerator_WithSameMethodFingerprint.class.getClassLoader()).getLoaded();
+                .make()
+                .load(ObjectGenerator_WithSameMethodFingerprint.class.getClassLoader())
+                .getLoaded();
     }
 
     public interface People {

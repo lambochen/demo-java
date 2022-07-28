@@ -34,7 +34,7 @@ public class ObjectGenerator_WithOtherClassWithoutSameMethodFingerprint {
     }
 
     static Class<? extends People> generateWithOtherClassWithoutSameMethodFingerprint(String methodForIntercept) {
-        DynamicType.Unloaded<People> unloaded = new ByteBuddy()
+        return new ByteBuddy()
                 .subclass(People.class)
                 .name("cn.lambochen.demo.bytebuddy.WithOtherClassWithoutSameMethodFingerprint")
                 // 此处指明了需要拦截的方法
@@ -47,9 +47,9 @@ public class ObjectGenerator_WithOtherClassWithoutSameMethodFingerprint {
                                 .filter(ElementMatchers.named(methodForIntercept))
                                 .to(new Chinese())
                 )
-                .make();
-
-        return unloaded.load(ObjectGenerator_WithOtherClassWithoutSameMethodFingerprint.class.getClassLoader()).getLoaded();
+                .make()
+                .load(ObjectGenerator_WithOtherClassWithoutSameMethodFingerprint.class.getClassLoader())
+                .getLoaded();
     }
 
     public interface People {

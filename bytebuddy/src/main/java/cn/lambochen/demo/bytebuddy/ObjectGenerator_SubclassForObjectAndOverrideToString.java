@@ -27,17 +27,18 @@ public class ObjectGenerator_SubclassForObjectAndOverrideToString {
      */
     public static Class<? extends Object> generateSubclassForObjectAndOverrideToString() {
         String clazzName = "cn.lambochen.demo.bytebyddy.SubclassForObjectAndOverrideToString";
-        DynamicType.Unloaded<Object> unloaded = new ByteBuddy()
-                .subclass(Object.class) // 指定是哪个类的子类
-                .name(clazzName) // 指定类名
-                .method(ElementMatchers.named("toString")) // 注名要拦截的方法（拦截后即进行字节码重写）
-                .intercept(FixedValue.value("this is bytebuddy intercept result.")) // 拦截后的处理逻辑，此处返回固定值
-                .make();
-
-        Class<? extends Object> clazz = unloaded
+        return new ByteBuddy()
+                // 指定是哪个类的子类
+                .subclass(Object.class)
+                // 指定类名
+                .name(clazzName)
+                // 注名要拦截的方法（拦截后即进行字节码重写）
+                .method(ElementMatchers.named("toString"))
+                // 拦截后的处理逻辑，此处返回固定值
+                .intercept(FixedValue.value("this is bytebuddy intercept result."))
+                .make()
                 .load(ObjectGenerator_SubclassForObjectAndOverrideToString.class.getClassLoader())
                 .getLoaded();
-        return clazz;
     }
 
 }
