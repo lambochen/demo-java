@@ -21,6 +21,7 @@
     <modules>
         <module>java-agent-agent</module>
         <module>java-agent-test</module>
+        <module>javaagent-demo</module>
     </modules>
 
 </project>
