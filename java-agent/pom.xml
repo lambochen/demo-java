@@ -23,6 +23,7 @@
         <module>java-agent-test</module>
         <module>javaagent-demo</module>
         <module>javassist</module>
+        <module>javaagent-bytebuddy</module>
     </modules>
 
 </project>
