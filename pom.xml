@@ -23,5 +23,6 @@
 		<module>xml-parse</module>
 		<module>spi</module>
 		<module>bytebuddy</module>
+		<module>camel</module>
 	</modules>
 </project>

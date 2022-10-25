@@ -18,3 +18,4 @@
 - [springbootcli-demo: SpringBoot CLI Groovy application demo](./springbootcli-demo)
 - [spi: Java SPI demo](./spi)
 - [bytebuddy: 字节码注入 ByteBuddy](./bytebuddy)
+- [camel: Apache Camel](./camel)
