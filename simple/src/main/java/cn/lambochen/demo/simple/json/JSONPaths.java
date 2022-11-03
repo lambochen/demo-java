@@ -26,6 +26,11 @@ public class JSONPaths {
 
         JSONPath.set(jsonObject, jsonPath, list);
         System.out.println(json);
+
+
+        JSONPath.set(jsonObject, "$.test.tmp.list", list);
+        System.out.println(json);
+
     }
 
 }
