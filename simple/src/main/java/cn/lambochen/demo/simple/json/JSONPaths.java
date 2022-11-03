@@ -31,6 +31,13 @@ public class JSONPaths {
         JSONPath.set(jsonObject, "$.test.tmp.list", list);
         System.out.println(json);
 
+
+        String specialJson = "{\"ext_black_list\":[],\"com.youzan.kdtid\":[105003578,109593374,111632415]}";
+        JSONObject specialJsonObj = JSON.parseObject(specialJson);
+
+        // 特殊字符
+        Object specialList = JSONPath.eval(specialJsonObj, "$.com\\.youzan\\.kdtid");
+        System.out.println(specialList);
     }
 
 }
