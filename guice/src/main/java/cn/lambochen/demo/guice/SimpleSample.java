@@ -10,7 +10,7 @@ import com.google.inject.Singleton;
  * @date 2022-11-08 19:00
  */
 @Singleton
-public class Sample {
+public class SimpleSample {
 
     @Inject
     Printer printer;
@@ -22,18 +22,20 @@ public class Sample {
     public static void main(String[] args) {
         Injector injector = Guice.createInjector();
 
-        Sample sample = injector.getInstance(Sample.class);
+        SimpleSample sample = injector.getInstance(SimpleSample.class);
         sample.print();
     }
 
+    /**
+     * 也可替换为 {@link javax.inject.Singleton}
+     */
+    @Singleton
+    static class Printer {
+        public void print() {
+            System.out.println("hello world");
+        }
+    }
+
 }
 
-/**
- * 也可替换为 {@link javax.inject.Singleton}
- */
-@Singleton
-class Printer {
-    public void print() {
-        System.out.println("hello world");
-    }
-}
+
