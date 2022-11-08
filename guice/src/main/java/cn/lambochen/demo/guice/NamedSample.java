@@ -5,23 +5,31 @@ import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Singleton;
+import com.google.inject.name.Named;
+import com.google.inject.name.Names;
 
 /**
  * @author lambochen
- * @date 2022-11-08 19:18
+ * @date 2022-11-08 19:23
  */
 @Singleton
-public class ModuleSample {
+public class NamedSample {
 
     @Inject
-    Printer printer;
+    @Named("hello")
+    Printer helloPrinter;
+
+    @Inject
+    @Named("world")
+    Printer worldPrinter;
+
 
     public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new NamedModule());
+        NamedSample sample = injector.getInstance(NamedSample.class);
 
-        Injector injector = Guice.createInjector(new Selector());
-        ModuleSample sample = injector.getInstance(ModuleSample.class);
-        sample.printer.print();
-
+        sample.helloPrinter.print();
+        sample.worldPrinter.print();
     }
 
     interface Printer {
@@ -46,12 +54,13 @@ public class ModuleSample {
         }
     }
 
-    static class Selector extends AbstractModule {
+    static class NamedModule extends AbstractModule {
         @Override
         protected void configure() {
             super.configure();
 
-            bind(Printer.class).to(HelloPrinter.class);
+            bind(Printer.class).annotatedWith(Names.named("hello")).to(HelloPrinter.class);
+            bind(Printer.class).annotatedWith(Names.named("world")).to(WorldPrinter.class);
         }
     }
 
