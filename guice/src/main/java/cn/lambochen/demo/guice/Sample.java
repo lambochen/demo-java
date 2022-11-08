@@ -28,6 +28,9 @@ public class Sample {
 
 }
 
+/**
+ * 也可替换为 {@link javax.inject.Singleton}
+ */
 @Singleton
 class Printer {
     public void print() {
