@@ -1,38 +1,33 @@
 package cn.lambochen.demo.guice;
 
+import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
-import com.google.inject.ImplementedBy;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Singleton;
 
 /**
  * @author lambochen
- * @date 2022-11-08 19:10
+ * @date 2022-11-08 19:18
  */
 @Singleton
-public class ImplementedBySample {
+public class ModuleSample {
 
     @Inject
     Printer printer;
-    
+
     public static void main(String[] args) {
-        Injector injector = Guice.createInjector();
-        ImplementedBySample sample = injector.getInstance(ImplementedBySample.class);
+
+        Injector injector = Guice.createInjector(new Selector());
+        ModuleSample sample = injector.getInstance(ModuleSample.class);
         sample.printer.print();
+
     }
 
-    @ImplementedBy(WorldPrinter.class)
     interface Printer {
         void print();
     }
 
-    /**
-     * 此处不用 Singleton 标注也能正常启动
-     *
-     * 不用Singleton标注，每次获取实例时，Guice会重新构造一个，这个会有反射构造器的性能损耗，在高性能场景下，请谨慎
-     */
-    @Singleton
     static class HelloPrinter implements Printer {
 
         @Override
@@ -41,14 +36,21 @@ public class ImplementedBySample {
         }
     }
 
-    @Singleton
     static class WorldPrinter implements Printer {
 
         @Override
         public void print() {
             System.out.println("world");
         }
-
     }
-    
+
+    static class Selector extends AbstractModule {
+        @Override
+        protected void configure() {
+            super.configure();
+
+            bind(Printer.class).to(HelloPrinter.class);
+        }
+    }
+
 }
