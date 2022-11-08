@@ -36,6 +36,14 @@
             <version>5.1.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.google.inject.extensions/guice-multibindings -->
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-multibindings</artifactId>
+            <version>4.2.3</version>
+        </dependency>
+
+
     </dependencies>
 
 <!--    <build>-->
