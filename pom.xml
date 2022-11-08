@@ -24,5 +24,6 @@
 		<module>spi</module>
 		<module>bytebuddy</module>
 		<module>camel</module>
+		<module>guice</module>
 	</modules>
 </project>
