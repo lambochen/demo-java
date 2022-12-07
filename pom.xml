@@ -25,5 +25,6 @@
 		<module>bytebuddy</module>
 		<module>camel</module>
 		<module>guice</module>
+		<module>spring</module>
 	</modules>
 </project>
