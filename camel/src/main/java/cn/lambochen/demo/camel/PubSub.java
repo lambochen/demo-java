@@ -5,8 +5,11 @@ import org.apache.camel.ConsumerTemplate;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.ProducerTemplate;
+import org.apache.camel.Route;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
+
+import java.util.List;
 
 /**
  * @author lambochen
@@ -38,6 +41,8 @@ public class PubSub {
             }
         });
         context.start();
+
+        List<Route> routes = context.getRoutes();
 
         // produce
         ProducerTemplate producerTemplate = context.createProducerTemplate();
