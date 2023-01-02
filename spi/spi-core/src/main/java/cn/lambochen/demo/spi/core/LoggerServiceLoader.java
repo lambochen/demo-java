@@ -1,7 +1,6 @@
 package cn.lambochen.demo.spi.core;
 
 import cn.lambochen.demo.spi.provider.Logger;
-import com.oracle.tools.packager.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +17,7 @@ public class LoggerServiceLoader {
     static {
         // load SPI impl
         ServiceLoader<Logger> loggerServiceLoader = ServiceLoader.load(Logger.class);
-        loggerServiceLoader.iterator()
-                .forEachRemaining(logger -> loggers.add(logger));
+        loggerServiceLoader.iterator().forEachRemaining(loggers::add);
     }
 
     public static Logger getLogger() {
