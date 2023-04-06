@@ -27,5 +27,6 @@
 		<module>guice</module>
 		<module>spring</module>
 		<module>sentinel</module>
+		<module>springboot-ext</module>
 	</modules>
 </project>

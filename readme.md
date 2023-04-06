@@ -22,3 +22,4 @@
 - [guice: Google Guice](./guice)
 - [spring: Spring Framework](./spring)
 - [sentinel: Alibaba Sentinel](./sentinel)
+- [springboot-ext: SpringBoot 扩展点](./springboot-ext)
