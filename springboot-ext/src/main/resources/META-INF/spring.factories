@@ -1,1 +1,2 @@
 org.springframework.context.ApplicationContextInitializer=cn.lambochen.demo.springboot.ext.LogApplicationContextInitializer
+org.springframework.context.ApplicationListener=cn.lambochen.demo.springboot.ext.LogApplicationListener
