@@ -26,9 +26,9 @@ public class RotateExecute {
         RotateExecute.state = 0;
         RotateExecute executor = new RotateExecute();
 
-        Thread print0 = new Thread(() -> executor.print(0));
-        Thread print1 = new Thread(() -> executor.print(1));
-        Thread print2 = new Thread(() -> executor.print(2));
+        Thread print0 = new Thread(() -> executor.rotate(0));
+        Thread print1 = new Thread(() -> executor.rotate(1));
+        Thread print2 = new Thread(() -> executor.rotate(2));
 
         print0.setName("zero");
         print1.setName("one");
@@ -37,6 +37,12 @@ public class RotateExecute {
         print0.start();
         print1.start();
         print2.start();
+    }
+
+    void rotate(int flag) {
+        while (true) {
+            print(flag);
+        }
     }
 
 }
