@@ -2,6 +2,8 @@ package cn.lambochen.demo.simple.concurrent;
 
 /**
  * @author lambochen
+ *
+ * https://zhuanlan.zhihu.com/p/370130458
  */
 public class RotateExecute {
 
